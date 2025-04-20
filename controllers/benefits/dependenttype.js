@@ -8,7 +8,6 @@ const index = (req, res) => {
 
     }).then((result)=>{
 
-        console.log('success');
         return res.json(result);
 
     }).catch((error)=>{

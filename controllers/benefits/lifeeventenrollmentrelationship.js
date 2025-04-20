@@ -1,13 +1,12 @@
 const { sequelize, DataTypes } = require('sequelize');
-const employeeenrollmentlifeevent = require('../../models/benefits/employeeenrollmentlifeevent')(sequelize, DataTypes);
+const lifeeventenrollmentrelationship = require('../../models/benefits/lifeeventenrollmentrelationship')(sequelize, DataTypes);
 
 const index = (req, res) => {
  
-    employeeenrollmentlifeevent.findAll({
+    lifeeventenrollmentrelationship.findAll({
 
     }).then((result)=>{
 
-        console.log('success');
         return res.json(result);
 
     }).catch((error)=>{

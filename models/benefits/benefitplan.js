@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes){
     const benefitplan = connection.define('benefitplan', {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey:true
         },
         enrollment_period_id : {

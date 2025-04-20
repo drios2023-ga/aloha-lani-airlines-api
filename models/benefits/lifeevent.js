@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes){
     const lifeevent = connection.define('lifeevent', {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey:true
         },
         employee_id : {
@@ -21,9 +21,13 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.INTEGER,
             field: 'dependent_id'
         },
-        timestamp_life_event: {
+        life_event_date: {
+            type: DataTypes.DATE,
+            field: 'life_event_date'
+        },
+        datetime_created: {
             type: DataTypes.TIME,
-            field: 'timestamp_life_event'
+            field: 'datetime_created'
         }
 
     }, {tableName: 'life_event', timestamps: false});

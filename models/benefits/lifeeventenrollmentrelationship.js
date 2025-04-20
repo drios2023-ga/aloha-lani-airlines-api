@@ -3,19 +3,19 @@ const connection = require('../../config/benefits/database');
 
 module.exports = function(sequelize, DataTypes){
 
-    const dependentstatus = connection.define('dependentstatus', {
+    const lifeeventenrollmentrelationship = connection.define('lifeeventenrollmentrelationship', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey:true
         },
-        employee_dept :{
+        life_event_enrollment_relationship : {
             type: DataTypes.STRING,
-            field: 'dependent_status'
+            field: 'life_event_enrollment_relationship'
         }
 
-    }, {tableName: 'dependent_status', timestamps: false});
+    }, {tableName: 'life_event_enrollment_relationship', timestamps: false});
 
-    return dependentstatus;
+    return lifeeventenrollmentrelationship;
 
 }

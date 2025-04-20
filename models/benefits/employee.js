@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes){
     const employee = connection.define('employee', {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey:true
         },
         employee_position_id : {

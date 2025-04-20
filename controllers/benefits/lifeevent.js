@@ -7,7 +7,51 @@ const index = (req, res) => {
 
     }).then((result)=>{
 
-        console.log('success');
+        return res.json(result);
+
+    }).catch((error)=>{
+
+        console.log(error);
+        return res.json({
+            message: 'Unable to fetch records!'
+        })
+
+    })
+}
+
+const show = (req, res) => {
+
+    const id = req.params.id;
+
+    lifeevent.findByPk(id,{}).then((result)=>{
+
+        return res.json(result);
+
+    }).catch((error)=>{
+
+        console.log(error);
+        return res.json({
+            message: 'Unable to fetch records!'
+        })
+
+    })
+}
+
+const create = (req, res) => {
+
+    console.log('create');
+    console.log(req.body);
+
+    lifeevent.create({
+
+          employee_id: req.body.employee_id
+        , life_event_type_id: req.body.life_event_type_id
+        , dependent_id: req.body.dependent_id
+        , life_event_date: req.body.life_event_date
+        , datetime_created: req.body.datetime_created
+
+    }).then((result)=>{
+
         return res.json(result);
 
     }).catch((error)=>{
@@ -21,5 +65,5 @@ const index = (req, res) => {
 }
 
 module.exports = {
-    index
+    index, show, create
 }

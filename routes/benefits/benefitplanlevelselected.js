@@ -5,4 +5,10 @@ benefitPlanLevelSelectedCtrl = require('../../controllers/benefits/benefitplanle
 //show all
 router.get('/', benefitPlanLevelSelectedCtrl.index);
 
+//get one
+router.get('/:id', benefitPlanLevelSelectedCtrl.show);
+
+//new
+router.post('/new', benefitPlanLevelSelectedCtrl.create);
+
 module.exports = router;

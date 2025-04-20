@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes){
     const lifeeventdependent = connection.define('lifeeventdependent', {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey:true
         },
         life_event_id : {

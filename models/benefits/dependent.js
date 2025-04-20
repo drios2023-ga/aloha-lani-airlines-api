@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes){
     const dependent = connection.define('dependent', {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: false,
+            autoIncrement: true,
             primaryKey:true
         },
         employee_id : {

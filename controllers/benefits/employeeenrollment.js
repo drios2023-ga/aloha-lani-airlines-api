@@ -7,7 +7,6 @@ const index = (req, res) => {
 
     }).then((result)=>{
 
-        console.log('success');
         return res.json(result);
 
     }).catch((error)=>{
@@ -20,6 +19,55 @@ const index = (req, res) => {
     })
 }
 
+const show = (req, res) => {
+
+    const id = req.params.id;
+
+    employeeenrollment.findByPk(id,{}).then((result)=>{
+
+        return res.json(result);
+
+    }).catch((error)=>{
+
+        console.log(error);
+        return res.json({
+            message: 'Unable to fetch records!'
+        })
+
+    })
+}
+
+
+const create = (req, res) => {
+
+    //const id = req.params.id;
+
+    console.log('create');
+    console.log(req.body);
+
+    employeeenrollment.create({
+
+            enrollment_period_id: req.body.enrollment_period_id
+          , employee_id: req.body.employee_id
+          , employee_enrollment_type_id: req.body.employee_enrollment_type_id
+          , confirmation_number: req.body.confirmation_number
+          , datetime_created: req.body.datetime_created
+
+    }).then((result)=>{
+
+        return res.json(result);
+
+    }).catch((error)=>{
+
+        console.log(error);
+        return res.json({
+            message: 'Unable to fetch records!'
+        })
+
+    })
+}
+
+
 module.exports = {
-    index
+    index, show, create
 }

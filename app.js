@@ -40,7 +40,7 @@ const employeeEnrollmentRouter = require('./routes/benefits/employeeenrollment')
 const benefitPlanLevelSelectedRouter = require('./routes/benefits/benefitplanlevelselected');
 
 //ee enrollment life event + life event tables
-const employeeEnrollmentLifeEventRouter = require('./routes/benefits/employeeenrollmentlifeevent');
+const lifeEventEnrollmentRelationshipRouter = require('./routes/benefits/lifeeventenrollmentrelationship');
 const lifeEventTypeRouter = require('./routes/benefits/lifeeventtype');
 const lifeEventRouter = require('./routes/benefits/lifeevent');
 const lifeEventDependentRouter = require('./routes/benefits/lifeeventdependent');
@@ -113,11 +113,10 @@ app.use('/employeeenrollment', employeeEnrollmentRouter);
 app.use('/benefitplanlevelselected', benefitPlanLevelSelectedRouter);
 
 //ee enrollment life event + life event tables
-app.use('/employeeenrollmentlifeevent', employeeEnrollmentLifeEventRouter);
+app.use('/lifeeventenrollmentrelationship', lifeEventEnrollmentRelationshipRouter);
 app.use('/lifeeventtype', lifeEventTypeRouter);
 app.use('/lifeevent', lifeEventRouter);
 app.use('/lifeeventdependent', lifeEventDependentRouter);
-
 
 ///////////////////////////////////////////////
 ///           error handling
